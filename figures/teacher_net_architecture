@@ -1,0 +1,25 @@
+digraph TeacherNet {
+	rankdir=LR
+	node [shape=box style=rounded]
+	input [label="Input
+(784)"]
+	fc1 [label="Linear
+(784→1200)"]
+	dropout1 [label="Dropout
+(0.3)"]
+	fc2 [label="Linear
+(1200→1200)"]
+	dropout2 [label="Dropout
+(0.3)"]
+	fc3 [label="Linear
+(1200→10)"]
+	output [label="Output
+(10)"]
+	input -> fc1
+	fc1 -> dropout1
+	dropout1 -> fc2
+	fc2 -> dropout2
+	dropout2 -> fc3
+	fc3 -> output
+	dpi=300
+}

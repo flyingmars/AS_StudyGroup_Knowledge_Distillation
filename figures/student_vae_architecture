@@ -1,0 +1,34 @@
+digraph StudentVAE {
+	rankdir=LR
+	node [shape=box style=rounded]
+	input [label="Input
+(784)"]
+	enc_fc1 [label="Linear
+(784→50)"]
+	enc_fc2 [label="Linear
+(50→50)"]
+	fc_mu [label="Linear
+(50→2)"]
+	fc_var [label="Linear
+(50→2)"]
+	reparameterize [label=Reparameterize]
+	dec_fc1 [label="Linear
+(2→50)"]
+	dec_fc2 [label="Linear
+(50→50)"]
+	dec_fc3 [label="Linear
+(50→784)"]
+	output [label="Output
+(784)"]
+	input -> enc_fc1
+	enc_fc1 -> enc_fc2
+	enc_fc2 -> fc_mu
+	enc_fc2 -> fc_var
+	fc_mu -> reparameterize
+	fc_var -> reparameterize
+	reparameterize -> dec_fc1
+	dec_fc1 -> dec_fc2
+	dec_fc2 -> dec_fc3
+	dec_fc3 -> output
+	dpi=300
+}

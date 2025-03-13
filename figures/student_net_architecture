@@ -1,0 +1,16 @@
+digraph StudentNet {
+	rankdir=LR
+	node [shape=box style=rounded]
+	input [label="Input
+(784)"]
+	fc1 [label="Linear
+(784→10)"]
+	fc2 [label="Linear
+(10→10)"]
+	output [label="Output
+(10)"]
+	input -> fc1
+	fc1 -> fc2
+	fc2 -> output
+	dpi=300
+}
